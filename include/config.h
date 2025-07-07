@@ -369,6 +369,17 @@ THE SOFTWARE.
 	#define NUM_CAN_CHANNEL			 1
 	#define CONFIG_CANFD			 1
 
+#elif defined(BOARD_RayquazaFD)
+	#define USBD_PRODUCT_STRING_FS	 "Rayquaza FD HUB"
+	#define USBD_MANUFACTURER_STRING "RayquazaFD"
+	#define DFU_INTERFACE_STRING_FS	 "Rayquaza FD firmware upgrade interface"
+
+	#define TIM2_CLOCK_SPEED		 64000000
+
+	#define CAN_CLOCK_SPEED			 64000000
+	#define NUM_CAN_CHANNEL			 1
+	#define CONFIG_CANFD			 1
+
 #else
 	#error please define BOARD
 #endif
