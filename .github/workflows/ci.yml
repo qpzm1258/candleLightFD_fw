@@ -8,7 +8,7 @@ on:
 env:
   BUILD_TYPE: Release
   CMAKE_TOOLCHAIN_FILE: cmake/gcc-arm-none-eabi-8-2019-q3-update.cmake
-  UPLOAD_FIRMWARE: true
+  UPLOAD_RELEASE: true
 
 jobs:
   build:
