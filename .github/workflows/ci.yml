@@ -66,7 +66,7 @@ jobs:
         tag_name: ${{ steps.tag.outputs.release_tag }}
         body_path: release.txt
         files: |
-          ${{github.workspace}}/build/HyberusFD_HUB_fw.bin
+          ${{github.workspace}}/build/HyberusFD_fw.bin
           ${{github.workspace}}/hardware/HyberusFD_HUB/*.xlsx
           ${{github.workspace}}/hardware/HyberusFD_HUB/*.pdf
           ${{github.workspace}}/hardware/HyberusFD_HUB/*.zip
