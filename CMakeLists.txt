@@ -287,7 +287,7 @@ set(TGTG0B1_LIST
 	"budgetcan"
 	"candleLightFD"
 	"nucleo_g0b1re"
-	"RayquazaFD"
+	"HyberusFD"
 )
 
 foreach (TGTNAME IN LISTS TGTF042_LIST)

@@ -53,7 +53,7 @@
 #define LEDTX_Mode		  GPIO_MODE_OUTPUT_PP
 #define LEDTX_Active_High 1
 
-static void rayquazafd_setup(USBD_GS_CAN_HandleTypeDef *hcan)
+static void Hyberusfd_setup(USBD_GS_CAN_HandleTypeDef *hcan)
 {
 	GPIO_InitTypeDef GPIO_InitStruct;
 
@@ -115,14 +115,14 @@ static void rayquazafd_setup(USBD_GS_CAN_HandleTypeDef *hcan)
 #endif
 }
 
-static void rayquazafd_phy_power_set(can_data_t *channel, bool enable)
+static void Hyberusfd_phy_power_set(can_data_t *channel, bool enable)
 {
 	UNUSED(channel);
 	UNUSED(enable);
 }
 
 static void
-rayquazafd_termination_set(can_data_t *channel,
+Hyberusfd_termination_set(can_data_t *channel,
 							  enum gs_can_termination_state enable)
 {
 	UNUSED(channel);
@@ -130,9 +130,9 @@ rayquazafd_termination_set(can_data_t *channel,
 }
 
 const struct BoardConfig config = {
-	.setup = rayquazafd_setup,
-	.phy_power_set = rayquazafd_phy_power_set,
-	.termination_set = rayquazafd_termination_set,
+	.setup = Hyberusfd_setup,
+	.phy_power_set = Hyberusfd_phy_power_set,
+	.termination_set = Hyberusfd_termination_set,
 	.channels[0] = {
 		.interface = FDCAN1,
 		.leds = {
