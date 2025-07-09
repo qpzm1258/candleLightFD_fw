@@ -1,5 +1,5 @@
 # HyberusFD_HUB
-Hyberus=Hydra+Cerberus
+Hyberus=Hydra+Cerberus  
 HyberusFD_HUB is an open-source USB-to-CAN hub based on the STM32G0B1CBT6. It supports a 12 V–24 V power input, provides three USB 2.0 ports via the CH334R chip, and offers two CAN connections through TJA1051K/3 chips. It is commonly used with MSM8916-based 4G USB modems as a USB expansion and CAN interface extension. The firmware supports both CAN and CAN FD protocols.
 
 - Pinout
