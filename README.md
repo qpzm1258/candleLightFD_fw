@@ -1,47 +1,22 @@
+# HyberusFD_HUB
+HyberusFD_HUB is an open-source USB-to-CAN hub based on the STM32G0B1CBT6. It supports a 12 V–24 V power input, provides three USB 2.0 ports via the CH334R chip, and offers two CAN connections through TJA1051K/3 chips. It is commonly used with MSM8916-based 4G USB modems as a USB expansion and CAN interface extension. The firmware supports both CAN and CAN FD protocols.
+- Pinout
+|feature|pin|
+|------|------|
+|LED_RX|PA0|
+|LEX_TX|PA1|
+|USB_P|PA12|
+|USB_N|PA11|
+|CAN1_RX|PB9|
+|CAN1_TX|PB8|
+|CAN1_S|PC13|
+![image](https://github.com/qpzm1258/candleLightFD_fw/blob/HyberusFD_HUB/hardware/HyberusFD_HUB/2D_HyberusFD_HUB.png)
+
+![image](https://github.com/qpzm1258/candleLightFD_fw/blob/HyberusFD_HUB/hardware/HyberusFD_HUB/3D_HyberusFD_HUB.png)
+
 # candleLight_gsusb
-[![Build](https://github.com/candle-usb/candleLight_fw/actions/workflows/ci.yml/badge.svg)](https://github.com/candle-usb/candleLight_fw/actions)
-
-This is firmware for certain STM32F042x/STM32F072xB-based USB-CAN adapters, notably:
-- candleLight: <https://github.com/HubertD/candleLight> (STM32F072xB)
-- candleLight FD: <https://linux-automation.com/en/products/candlelight-fd.html> (STM32G0B1CBT)
-- candleLight: <https://www.linux-automation.com/en/products/candlelight.html> (STM32F072xB)
-- cantact: <https://www.linklayer.com/tools> (STM32F042C6)
-- canable (cantact clone): <http://canable.io/> (STM32F042C6)
-- USB2CAN: <https://github.com/roboterclubaachen/usb2can> (STM32F042x6)
-- CANAlyze: <https://kkuchera.github.io/canalyze/> (STM32F042C6)
-- VulCAN Gen1: <https://shop.copperforge.cc/products/ac41> (STM32F042x6)
-- Entreé: <https://github.com/tuna-f1sh/entree> (STM32F042x6)
-- CANable-MKS 1.0: <https://github.com/makerbase-mks/CANable-MKS> (STM32F072xB)
-- ConvertDevice-xCAN: <https://github.com/ConvertDevice/xCAN> (STM32F072xB)
-- ConvertDevice-xCANFD: <https://github.com/ConvertDevice/xCANFD> (STM32G0B1CBT6)
-- DSD TECH SH-C30A: <https://www.deshide.com/product-details.html?pid=384242&_t=1671089557> (STM32F072xB)
-- FYSETC UCAN: <https://www.fysetc.com/products/fysetc-ucan-board-based-on-stm32f072-usb-to-can-adapter-support-with-canable-candlelight-klipper-firmware> (STM32F072xB)
-
-Of important note is that the common STM32F103 will NOT work with this firmware because its hardware cannot use both USB and CAN simultaneously.
-Beware also the smaller packages in the F042 series which map a USB and CAN_TX signal on the same pin and are therefore unusable !
-
-This implements the interface of the mainline linux gs_usb kernel module and
-works out-of-the-box with linux distros packaging this module, e.g. Ubuntu.
-
-## Limitations
-
-STM32G0B1-based devices are not yet supported by the mainline
-firmware. Support for these devices is discussed in
-https://github.com/candle-usb/candleLight_fw/pull/139 and
-https://github.com/candle-usb/candleLight_fw/pull/176.
-
-STM32G431-based devices (e.g. CANable-MKS 2.0) are not yet supported.
-
-Currently, the firmware sends back an echo frame to the host when the frame is written to the CAN peripheral, and not when the frame is actually sent successfully on the bus. This affects timestamps, one-shot mode, and other edge cases.
-
-## Known issues
-
-Be aware that there is a bug in the gs_usb module in linux<4.5 that can crash the kernel on device removal.
-
-Here is a fixed version that should also work for older kernels:
-  https://github.com/HubertD/socketcan_gs_usb
-
-The Firmware also implements WCID USB descriptors and thus can be used on recent Windows versions without installing a driver.
+[![Build](https://github.com/qpzm1258/candleLightFD_fw/actions/workflows/ci.yml/badge.svg)](https://github.com/qpzm1258/candleLightFD_fw/actions)
+This is firmware for HyberusFD_HUB base on [candleLight](https://github.com/marckleinebudde/candleLight_fw/tree/multichannel)
 
 ## Building
 
